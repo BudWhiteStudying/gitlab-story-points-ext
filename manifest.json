@@ -1,0 +1,30 @@
+{
+    "applications": {
+        "gecko": {
+            "id": "gitlab-sp@budwhite.studying.com"
+        }
+    },
+
+  "icons": {
+    "24": "icons/more-time-icon.svg",
+    "48": "icons/more-time-icon.svg",
+    "96": "icons/more-time-icon.svg"
+  },
+
+    "content_scripts": [
+        {
+            "js": [
+                "gitlab-sp.js"
+            ],
+            "matches": [
+              "*://10.136.97.102/*/milestones/*",
+              "*://*.gitlab.com/*/milestones/*",
+              "*://*.web/*/milestones/*"
+            ]
+        }
+    ],
+    "description": "Within the */milestones/* path of a GitLab host (ideally the milestone details page) this add-on counts the story points indicated by 'story point labels'. Story point labels are regular GitLab labels whose description contains the 'story point' keyword, having a parseable integer number as label value.",
+    "manifest_version": 2,
+    "name": "GitLab story points",
+    "version": "1.0"
+}
